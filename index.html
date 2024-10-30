@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>ヨガラックス</title>
+    <style>
+      /* Modal Styles */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1000; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; /* Disable scroll */
+        background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+      }
+
+      .modal-content {
+        position: relative;
+        background-color: white;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .modal-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="introModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>ようこそ ヨガラックスへ</h2>
+        <p>
+          ヨガラックスへようこそ！私たちのヨガスタジオで、内なる平和と健康を見つけましょう。初めての方も、経験豊富なヨガ愛好者も、私たちのクラスはすべてのレベルに対応しています。今すぐ登録して、20日間の無料トライアルをお楽しみください。
+        </p>
+      </div>
+    </div>
+
+    <nav>
+      <div class="nav__logo">
+        <img src="assets/logo.png" alt="ロゴ" />
+        <span>ヨガラックス</span>
+      </div>
+      <ul class="nav__links">
+        <li class="link"><a href="#home">ホーム</a></li>
+        <li class="link"><a href="#classes">クラス</a></li>
+        <li class="link"><a href="#membership">メンバーシップ</a></li>
+        <li class="link"><a href="#stories">私たちについて</a></li>
+        <li class="link"><a href="#posts">ブログ</a></li>
+        <li class="link"><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <header id="home">
+      <div class="section__container header__container">
+        <div class="header__content">
+          <h1>効果的なヨガ</h1>
+          <h2>一つのポーズで人生を変える。</h2>
+          <button class="btn">20日間無料トライアル</button>
+        </div>
+        <div class="header__image">
+          <img src="assets/header.jpg" alt="ヘッダー" />
+        </div>
+      </div>
+    </header>
+
+    <section class="section__container why__container">
+      <div class="why__image">
+        <img src="assets/why.png" alt="なぜヨガ" />
+      </div>
+      <div class="why__content">
+        <h2 class="section__header">なぜヨガに行くべきか？</h2>
+        <p>
+          現代の急速な世界では、日常の騒音に巻き込まれやすくなっています。ヨガは、反省し、息をつく瞬間を提供する平和と静けさの避難所です。集中した呼吸と穏やかな運動の実践を通じて、体を中心にし、心を落ち着かせることができます。ヨガの練習の後、私は深い落ち着きを感じ、その感覚は一日中続きます。この内なる静けさは、人生の困難に対処する能力を大幅に向上させました。周りでどんなに混乱があっても、ヨガは私に立ち止まり、息をし、自分の核を再発見することを教えてくれます。
+        </p>
+        <ul>
+          <li>
+            <span><i class="ri-checkbox-circle-fill"></i></span>
+            ヨガは脳力を高める
+          </li>
+          <li>
+            <span><i class="ri-checkbox-circle-fill"></i></span>
+            ヨガは呼吸を改善する
+          </li>
+          <li>
+            <span><i class="ri-checkbox-circle-fill"></i></span>
+            ヨガは強さを向上させる
+          </li>
+          <li>
+            <span><i class="ri-checkbox-circle-fill"></i></span>
+            ヨガは集中力を高める
+          </li>
+          <li>
+            <span><i class="ri-checkbox-circle-fill"></i></span>
+            ヨガは一日に意味を与える
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="hero" id="hero">
+      <div class="section__container hero__container">
+        <div class="hero__card">
+          <span><img src="assets/icon-1.png" alt="ヒーロー" /></span>
+          <h4>健康的なライフスタイル</h4>
+          <p>
+            ヨガの変革力を通じて健康的なライフスタイルを受け入れ、身体の活力と内なる平和を養いましょう。
+          </p>
+        </div>
+        <div class="hero__card">
+          <span><img src="assets/icon-2.png" alt="ヒーロー" /></span>
+          <h4>身体と心のバランス</h4>
+          <p>
+            意図的なポーズと心地よい呼吸を通じて、強く柔軟な身体を養いながら内なる落ち着きを育みます。
+          </p>
+        </div>
+        <div class="hero__card">
+          <span><img src="assets/icon-3.png" alt="ヒーロー" /></span>
+          <h4>瞑想の実践</h4>
+          <p>
+            現在の瞬間と深くつながりながら、内なる静けさとマインドフルネスを発見しましょう。
+          </p>
+        </div>
+        <div class="hero__card">
+          <span><img src="assets/icon-4.png" alt="ヒーロー" /></span>
+          <h4>セルフケア</h4>
+          <p>
+            ヨガを通じてセルフケアの変革力を発見し、静けさとマインドフルネスの瞬間を受け入れましょう。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container classes__container" id="classes">
+      <p class="section__subheader">ヨガクラス</p>
+      <h2 class="section__header">レベルとフォーカスを選択</h2>
+      <div class="classes__grid">
+        <div class="classes__image">
+          <img src="assets/classes-1.jpg" alt="クラス" />
+          <div class="classes__content">
+            <button class="btn classes__btn">もっと見る</button>
+          </div>
+        </div>
+        <div class="classes__image">
+          <img src="assets/classes-2.jpg" alt="クラス" />
+          <div class="classes__content">
+            <button class="btn classes__btn">もっと見る</button>
+          </div>
+        </div>
+        <div class="classes__image">
+          <img src="assets/classes-3.jpg" alt="クラス" />
+          <div class="classes__content">
+            <button class="btn classes__btn">もっと見る</button>
+          </div>
+        </div>
+        <div class="classes__image">
+          <img src="assets/classes-4.jpg" alt="クラス" />
+          <div class="classes__content">
+            <button class="btn classes__btn">もっと見る</button>
+          </div>
+        </div>
+        <div class="classes__image">
+          <img src="assets/classes-5.jpg" alt="クラス" />
+          <div class="classes__content">
+            <button class="btn classes__btn">もっと見る</button>
+          </div>
+        </div>
+        <div class="classes__image">
+          <img src="assets/classes-6.jpg" alt="クラス" />
+          <div class="classes__content">
+            <button class="btn classes__btn">もっと見る</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="membership" id="membership">
+      <div class="section__container membership__container">
+        <p class="section__subheader">料金表</p>
+        <h2 class="section__header">メンバーシップカード</h2>
+        <div class="membership__grid">
+          <div class="membership__card">
+            <h4>年間カード</h4>
+            <h2><sup>¥</sup>80,000</h2>
+            <h3>1年間</h3>
+            <h4>すべての機能を楽しむ</h4>
+            <p>全クラブの無料アクセス</p>
+            <p>グループトレーナー</p>
+            <p>グループクラスを予約する</p>
+            <p>フィットネスオリエンテーション</p>
+            <button class="btn membership__btn">始める</button>
+          </div>
+          <div class="membership__card">
+            <h4>月間カード</h4>
+            <h2><sup>¥</sup>7,000</h2>
+            <h3>1か月間</h3>
+            <h4>すべての機能を楽しむ</h4>
+            <p>グループクラス</p>
+            <p>フィットネス目標を話し合う</p>
+            <p>グループトレーナー</p>
+            <p>フィットネスオリエンテーション</p>
+            <button class="btn membership__btn">始める</button>
+          </div>
+          <div class="membership__card">
+            <h4>週間カード</h4>
+            <h2><sup>¥</sup>2,000</h2>
+            <h3>1週間</h3>
+            <h4>すべての機能を楽しむ</h4>
+            <p>ヨガエリアへのアクセス</p>
+            <p>グループトレーナー</p>
+            <p>グループクラス</p>
+            <p>フィットネスオリエンテーション</p>
+            <button class="btn membership__btn">始める</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container stories__container" id="stories">
+      <p class="section__subheader">お客様の声</p>
+      <h2 class="section__header">成功したストーリー</h2>
+      <div class="stories__grid">
+        <div class="stories__card">
+          <div class="stories__content">
+            <span><i class="ri-double-quotes-l"></i></span>
+            <p>
+              ヨガを通じて心、体、精神のバランスと調和を達成できます。ヨガは治癒と耐えることを教えてくれます。
+            </p>
+          </div>
+          <div class="stories__author">
+            <img src="assets/bks-iyengar.png" alt="著者" />
+            <div class="stories__author__details">
+              <h4>B.K.S.アイアンガー</h4>
+              <h6>「アイアンガーヨガ」の創始者</h6>
+            </div>
+          </div>
+        </div>
+        <div class="stories__card">
+          <div class="stories__content">
+            <span><i class="ri-double-quotes-l"></i></span>
+            <p>
+              ヨガを通じて心、体、精神のバランスと調和を達成できます。ヨガは治癒と耐えることを教えてくれます。「ヨガは統一を意味します。ヨガを理解することで、人生が喜びと充実感で満たされるでしょう。」
+            </p>
+          </div>
+          <div class="stories__author">
+            <img src="assets/sadhguru.jpeg" alt="著者" />
+            <div class="stories__author__details">
+              <h4>サドグル</h4>
+              <h6>イーシャ財団の創設者</h6>
+            </div>
+          </div>
+        </div>
+        <div class="stories__card">
+          <div class="stories__content">
+            <span><i class="ri-double-quotes-l"></i></span>
+            <p>
+              ヨガは全体的な健康とウェルビーイングのアプローチを提供します。「ヨガは自己の、自己による、自己への旅です。」
+            </p>
+          </div>
+          <div class="stories__author">
+            <img src="assets/baba ramdev.png" alt="著者" />
+            <div class="stories__author__details">
+              <h4>ババ・ラームデーヴ</h4>
+              <h6>パタンジャリ・アーユルヴェーダ社の創設者</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner">
+      <div class="section__container banner__container">
+        <div class="banner__card">
+          <h4>10,000</h4>
+          <p>満足したお客様</p>
+        </div>
+        <div class="banner__card">
+          <h4>50</h4>
+          <p>ヨガワークショップ</p>
+        </div>
+        <div class="banner__card">
+          <h4>25</h4>
+          <p>経験年数</p>
+        </div>
+        <div class="banner__card">
+          <h4>920</h4>
+          <p>レッスン実施数</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="posts" id="posts">
+      <div class="section__container posts__container">
+        <p class="section__subheader">ブログ</p>
+        <h2 class="section__header">最新の投稿</h2>
+        <div class="posts__grid">
+          <div class="posts__card">
+            <img src="assets/posts-1.jpg" alt="投稿" />
+            <div class="posts__content">
+              <div class="posts__date">
+                <span>31</span>
+                <div>
+                  <p>2021年</p>
+                  <p>12月</p>
+                </div>
+              </div>
+              <h4>内なる平和を解き放つ</h4>
+              <p>
+                内なる平和を育み、ストレスを軽減し、全体的なウェルビーイングを向上させるための実践を探求しましょう。
+              </p>
+            </div>
+          </div>
+          <div class="posts__card">
+            <img src="assets/posts-2.jpg" alt="投稿" />
+            <div class="posts__content">
+              <div class="posts__date">
+                <span>25</span>
+                <div>
+                  <p>2022年</p>
+                  <p>3月</p>
+                </div>
+              </div>
+              <h4>デスクからマットへ</h4>
+              <p>
+                座りがちなライフスタイルの影響を打ち消すために、シンプルなヨガストレッチと呼吸法を取り入れましょう。
+              </p>
+            </div>
+          </div>
+          <div class="posts__card">
+            <img src="assets/posts-3.jpg" alt="投稿" />
+            <div class="posts__content">
+              <div class="posts__date">
+                <span>06</span>
+                <div>
+                  <p>2022年</p>
+                  <p>8月</p>
+                </div>
+              </div>
+              <h4>年齢を超えたヨガ</h4>
+              <p>
+                妊娠中のヨガから高齢者向けのヨガまで、柔軟性を高め、ウェルビーイングへの生涯の愛情を育みましょう。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container photos__container">
+      <p class="section__subheader">ギャラリー</p>
+      <h2 class="section__header">最新の写真を見る</h2>
+      <div class="photos__grid">
+        <div class="photos__card">
+          <img src="assets/photos-1.jpg" alt="写真" />
+        </div>
+        <div class="photos__card">
+          <img src="assets/photos-2.jpg" alt="写真" />
+        </div>
+        <div class="photos__card">
+          <img src="assets/photos-3.jpg" alt="写真" />
+        </div>
+        <div class="photos__card">
+          <img src="assets/photos-4.jpg" alt="写真" />
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="footer__logo"><a href="#">ヨガラックス</a></div>
+        </div>
+        <div class="footer__col">
+          <p>オオサカフ, ヒガシオオサカシ, ヒシエ, 5-14</p>
+        </div>
+        <div class="footer__col">
+          <div class="footer__socials">
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="https://www.instagram.com/gouravista/" target="_blank"
+              ><i class="ri-instagram-line"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="section__container footer__bar">
+        Copyright © 2024. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+      // JavaScript to open and close the modal
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the modal
+        var modal = document.getElementById("introModal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Show the modal on page load
+        modal.style.display = "block";
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+          modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      });
+    </script>
+  </body>
+</html>
