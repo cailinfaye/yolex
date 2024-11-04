@@ -10,69 +10,8 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="https://unpkg.com/scrollreveal"></script>
     <title>ヨガラックス</title>
-    <style>
-      /* Modal Styles */
-      .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1000; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden; /* Disable scroll */
-        background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
-      }
-
-      .modal-content {
-        position: relative;
-        background-color: white;
-        margin: auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        max-width: 600px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-
-      .close {
-        position: absolute;
-        top: 10px;
-        right: 25px;
-        color: #aaa;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      .modal-image {
-        width: 100%;
-        height: auto;
-        margin-bottom: 20px;
-      }
-    </style>
   </head>
   <body>
-    <div id="introModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>ようこそ ヨガラックスへ</h2>
-        <p>
-          ヨガラックスへようこそ！私たちのヨガスタジオで、内なる平和と健康を見つけましょう。初めての方も、経験豊富なヨガ愛好者も、私たちのクラスはすべてのレベルに対応しています。今すぐ登録して、20日間の無料トライアルをお楽しみください。
-        </p>
-      </div>
-    </div>
-
     <nav>
       <div class="nav__logo">
         <img src="assets/logo.png" alt="ロゴ" />
@@ -98,6 +37,54 @@
           <img src="assets/header.jpg" alt="ヘッダー" />
         </div>
       </div>
+      <style>
+  /* Style for the modal background */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    z-index: 1000;
+  }
+
+  /* Style for the modal box */
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Style for the close button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  /* CSS to prevent scrolling */
+  .scroll-lock {
+    overflow: hidden;
+  }
+
+  /* Black text for modal heading and description */
+  .modal-content h2, .modal-content p {
+    color: black;
+  }
+</style>
     </header>
 
     <section class="section__container why__container">
@@ -423,32 +410,42 @@
         Copyright © 2024. All rights reserved.
       </div>
     </footer>
+    <div class="modal-overlay" id="modal">
+  <div class="modal-content">
+    <button class="close-btn" id="close-btn">X</button>
+    <h2>ようこそ ヨガラックスへ </h2>
+    <p> ヨガラックスへようこそ！私たちのヨガスタジオで、内なる平和と健康を見つけましょう。初めての方も、経験豊富なヨガ愛好者も、私たちのクラスはすべてのレベルに対応しています。今すぐ登録して、20日間の無料トライアルをお楽しみください。</p>
+  </div>
+</div>
 
     <script src="main.js"></script>
     <script>
-      // JavaScript to open and close the modal
-      document.addEventListener("DOMContentLoaded", function () {
-        // Get the modal
-        var modal = document.getElementById("introModal");
+  // Get the modal and close button elements
+  const modal = document.getElementById('modal');
+  const closeButton = document.getElementById('close-btn');
+  const modalContent = document.querySelector('.modal-content');
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+  // Disable scrolling on body when modal is visible
+  document.body.classList.add('scroll-lock');
 
-        // Show the modal on page load
-        modal.style.display = "block";
+  // Function to close the modal and enable scrolling
+  function closeModal() {
+    modal.style.visibility = 'hidden';
+    document.body.classList.remove('scroll-lock');
+  }
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-          modal.style.display = "none";
-        };
+  // Close the modal if the close button is clicked
+  closeButton.addEventListener('click', closeModal);
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        };
-      });
-    </script>
+  // Close the modal if user clicks on the modal background (overlay)
+  modal.addEventListener('click', function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Close the modal if user clicks on the modal body (content area)
+  modalContent.addEventListener('click', closeModal);
+</script>
   </body>
 </html>
